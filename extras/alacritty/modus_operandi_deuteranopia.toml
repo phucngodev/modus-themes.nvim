@@ -3,19 +3,19 @@
 
 # Default colors
 [colors.primary]
-background   = '0xffffff'
-foreground   = '0x000000'
+background   = '0xf8fafc'
+foreground   = '0x404040'
 
 # Normal colors
 [colors.normal]
-black     = '0xffffff'
+black     = '0xf8fafc'
 red       = '0xa60000'
 green     = '0x006800'
 yellow    = '0x695500'
 blue      = '0x0031a9'
-magenta   = '0x721045'
+magenta   = '0x8f0075'
 cyan      = '0x005e8b'
-white     = '0x000000'
+white     = '0x404040'
 
 # Bright colors
 [colors.bright]

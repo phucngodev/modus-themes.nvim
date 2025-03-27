@@ -2,7 +2,7 @@
 // Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/prismjs.lua
 module.exports =  {
   plain: {
-    color: "#000000",
+    color: "#404040",
     backgroundColor: "#fbf7f0",
   },
   styles: [
@@ -27,7 +27,7 @@ module.exports =  {
     {
       types: ["punctuation"],
       style: {
-        color: "#721045",
+        color: "#8f0075",
       },
     },
     {
@@ -57,7 +57,7 @@ module.exports =  {
     {
       types: ["variable"],
       style: {
-        color: "#000000",
+        color: "#404040",
       },
     },
     {

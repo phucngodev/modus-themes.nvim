@@ -3,7 +3,7 @@
 
 themes {
     modus_operandi_Tinted {
-        fg "#000000"
+        fg "#404040"
         // The background color is used for text highlighting and should be different from the black value
         bg "#f1d5d0"
         // Black should match the terminal background color
@@ -13,9 +13,9 @@ themes {
         green "#006800"
         yellow "#6f5500"
         blue "#0031a9"
-        magenta "#721045"
+        magenta "#8f0075"
         cyan "#005e8b"
-        white "#000000"
+        white "#404040"
         orange "#884900"
     }
 }

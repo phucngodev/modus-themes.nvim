@@ -1,10 +1,10 @@
 # Modus Themes for GitUI
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/gitui.lua
 (
-  selected_tab: Rgb(114,16,69), // magenta #721045
+  selected_tab: Rgb(143,0,117), // magenta #8f0075
   command_fg: Rgb(127,0,0), // comment #7f0000
-  selection_bg: Rgb(223,160,240), // visual #dfa0f0
-  selection_fg: Rgb(0,0,0), // fg_main #000000
+  selection_bg: Rgb(231,229,228), // visual #e7e5e4
+  selection_fg: Rgb(64,64,64), // fg_main #404040
   cmdbar_bg: Rgb(251,247,240), // bg_main #fbf7f0
   cmdbar_extra_lines_bg: Rgb(251,247,240), // bg_main #fbf7f0
   disabled_fg: Rgb(127,0,0), // comment #7f0000
@@ -19,7 +19,7 @@
   commit_author: Rgb(0,104,0), // green #006800
   danger_fg: Rgb(166,0,0), // red #a60000
   push_gauge_bg: Rgb(251,247,240), // bg_main #fbf7f0
-  push_gauge_fg: Rgb(0,0,0), // fg_main #000000
+  push_gauge_fg: Rgb(64,64,64), // fg_main #404040
   tag_fg: Rgb(143,0,117), // magenta_warmer #8f0075
   branch_fg: Rgb(111,85,0), // yellow #6f5500
 )

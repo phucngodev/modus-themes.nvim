@@ -4,27 +4,27 @@
 *.default=true
 *.normal=true
 
-*.bg = #ffffff
-*.fg = #000000
-*.selected.bg = #ffffff
-*.selected.fg = #000000
+*.bg = #f8fafc
+*.fg = #404040
+*.selected.bg = #f8fafc
+*.selected.fg = #404040
 
 title.bg=#ccdfff
-title.fg=#000000
+title.fg=#404040
 title.bold=true
 
 header.bold=true
 header.fg=#3548cf
-header.bg=#ffffff
+header.bg=#f8fafc
 
-border.bg=#9f9f9f
-border.fg=#9f9f9f
+border.bg=#e5e7eb
+border.fg=#e5e7eb
 
-tab.selected.fg=#000000
+tab.selected.fg=#404040
 tab.selected.bg=#bfc9ff
 tab.selected.bold=false
 dirlist*.selected.bg=#d0d6ec
-dirlist*.selected.fg=#000000
+dirlist*.selected.fg=#404040
 dirlist*.selected.bold=false
 
 *error.bold=true
@@ -36,26 +36,26 @@ statusline_*.bg=#c8c8c8
 statusline_*.fg=#0a0a0a
 statusline_error.fg=#a0132f
 
-msglist_unread.fg=#000000
+msglist_unread.fg=#404040
 msglist_unread.bold=true
 msglist_read.fg=#595959
 msglist_deleted.fg=#8f1313
 msglist_*.selected.bg=#d0d6ec
-msglist_marked.fg=#000000
-msglist_marked.selected.fg=#000000
+msglist_marked.fg=#404040
+msglist_marked.selected.fg=#404040
 msglist_marked.bg=#ccdfff
 msglist_marked.selected.bg=#bfc9ff
 
 completion_pill.reverse=false
 selector_focused.bold=false
 selector_focused.bg=#d0d6ec
-selector_focused.fg=#000000
+selector_focused.fg=#404040
 selector_chooser.bold=false
 selector_chooser.bg=#d0d6ec
-selector_chooser.fg=#000000
+selector_chooser.fg=#404040
 default.selected.bold=false
 default.selected.bg=#d0d6ec
-default.selected.fg=#000000
+default.selected.fg=#404040
 
 completion_default.selected.bg=#c0deff
 
