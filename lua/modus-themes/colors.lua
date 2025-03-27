@@ -10,14 +10,23 @@ M.modus_operandi = {
 	none = "NONE",
 
 	-- Base values
-	bg_main = "#ffffff",
+	bg_main = "#f5f5f5",
+	bg_main_light = "#fafafa",
 	bg_dim = "#f2f2f2",
 	bg_alt = "#f0f0f0",
-	fg_main = "#000000",
+	fg_main = "#404040",
 	fg_dim = "#595959",
 	fg_alt = "#193668",
-	border = "#9f9f9f",
-	border_highlight = "#3b3b3b",
+	border = "#e5e7eb",
+	border_highlight = "#e5e7eb",
+	bg_statusline = "#e4e4e7",
+	bg_cursor = '#f5f5f5',
+	fg_cursor = '#fdba74',
+	bg_popup = '#ffffff',
+	bg_nvimtree = '#e2e8f0',
+	bg_nvimtree_cursor = '#cbd5e1',
+	bg_visual = '#e7e5e4',
+	nontext = '#e7e5e4',
 
 	-- Common foreground values
 	red = "#a60000",
@@ -104,9 +113,9 @@ M.modus_operandi = {
 	bg_status_line_inactive = "#e6e6e6",
 	fg_status_line_inactive = "#585858",
 	-- tab bar colors for tab pages
-	bg_tab_bar = "#dfdfdf",
+	bg_tab_bar = "#e7e5e4",
 	bg_tab_current = "#ffffff",
-	bg_tab_other = "#c2c2c2",
+	bg_tab_other = "#e7e5e4",
 	fg_tab_other = "#333333",
 	bg_tab_alternate = "#c2c2e8",
 	-- git diffs
@@ -457,7 +466,7 @@ function M.setup(opts)
 	colors.info = colors.blue_cooler
 	colors.hint = colors.cyan_cooler
 	colors.success = colors.fg_added
-	colors.visual = colors.bg_magenta_intense
+	colors.visual = colors.bg_visual
 	colors.accent_light = colors.blue_faint
 	colors.accent = colors.blue_warmer
 	colors.accent_darker = colors.blue
