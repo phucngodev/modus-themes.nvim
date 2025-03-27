@@ -498,14 +498,13 @@ function M.setup()
 
 		-- NvimTree
 		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
-		NvimTreeWinSeparator = { fg = c.border, bg = c.border },
 		NvimTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
 		NvimTreeRootFolder = { fg = c.blue, bold = true },
 		NvimTreeGitDirty = { fg = c.fg_changed_intense },
 		NvimTreeGitNew = { fg = c.fg_added_intense },
 		NvimTreeGitDeleted = { fg = c.fg_removed_intense },
 		NvimTreeOpenedFile = { bg = c.bg_hl_line },
-		NvimTreeSpecialFile = { fg = c.magenta_cooler, underline = true },
+		NvimTreeSpecialFile = { fg = c.magenta_cooler, underline = false },
 		NvimTreeIndentMarker = { fg = c.fg_dim },
 		NvimTreeImageFile = { fg = c.fg_active },
 		NvimTreeSymlink = { fg = c.blue },
