@@ -13,11 +13,19 @@ M.modus_operandi = {
 	bg_main = "#ffffff",
 	bg_dim = "#f2f2f2",
 	bg_alt = "#f0f0f0",
-	fg_main = "#000000",
+	fg_main = "#404040",
 	fg_dim = "#595959",
 	fg_alt = "#193668",
-	border = "#9f9f9f",
-	border_highlight = "#3b3b3b",
+	border = "#e5e7eb",
+	border_highlight = "#e5e7eb",
+	bg_statusline = '#f1f5f9',
+	bg_cursor = '#f5f5f5',
+	fg_cursor = '#f59e0b',
+	bg_popup = '#ffffff',
+	bg_nvimtree = '#e2e8f0',
+	bg_nvimtree_cursor = '#cbd5e1',
+	bg_visual = '#e7e5e4',
+	nontext = '#e7e5e4',
 
 	-- Common foreground values
 	red = "#a60000",
@@ -457,7 +465,7 @@ function M.setup(opts)
 	colors.info = colors.blue_cooler
 	colors.hint = colors.cyan_cooler
 	colors.success = colors.fg_added
-	colors.visual = colors.bg_magenta_intense
+	colors.visual = colors.bg_visual
 	colors.accent_light = colors.blue_faint
 	colors.accent = colors.blue_warmer
 	colors.accent_darker = colors.blue
