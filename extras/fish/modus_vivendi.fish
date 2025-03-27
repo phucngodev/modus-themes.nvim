@@ -2,7 +2,7 @@
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/fish.lua
 
 set -l foreground ffffff
-set -l selection 7030af
+set -l selection ${visual}
 set -l comment 989898
 set -l red ff5f59
 set -l orange fec43f

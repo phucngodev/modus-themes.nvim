@@ -1,16 +1,16 @@
 [colors]
-foreground = "#000000"
+foreground = "#404040"
 background = "#fbf7f0"
-cursor_bg = "#000000"
-cursor_border = "#000000"
+cursor_bg = "#404040"
+cursor_border = "#404040"
 cursor_fg = "#fbf7f0"
-selection_bg = "#dfa0f0"
-selection_fg = "#000000"
+selection_bg = "#e7e5e4"
+selection_fg = "#404040"
 split = "#3548cf"
 compose_cursor = "#884900"
 scrollbar_thumb = "#9f9690"
 
-ansi = ["#fbf7f0", "#a60000", "#006800", "#6f5500", "#0031a9", "#721045", "#005e8b", "#000000"]
+ansi = ["#fbf7f0", "#a60000", "#006800", "#6f5500", "#0031a9", "#8f0075", "#005e8b", "#404040"]
 brights = ["#efe9dd", "#d00000", "#008900", "#808000", "#0000ff", "#dd22dd", "#008899", "#595959"]
 
 [colors.tab_bar]
@@ -22,7 +22,7 @@ fg_color = "#193668"
 bg_color = "#fbf7f0"
 
 [colors.tab_bar.inactive_tab]
-fg_color = "#000000"
+fg_color = "#404040"
 bg_color = "#c8b8b2"
 
 [colors.tab_bar.inactive_tab_hover]
@@ -35,7 +35,7 @@ bg_color = "#fbf7f0"
 intensity = "Bold"
 
 [colors.tab_bar.new_tab]
-fg_color = "#000000"
+fg_color = "#404040"
 bg_color = "#e0d4ce"
 
 [metadata]

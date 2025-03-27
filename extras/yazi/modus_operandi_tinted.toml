@@ -12,13 +12,13 @@ hovered         = { bg = "#f1d5d0" }
 preview_hovered = { bg = "#f1d5d0" }
 
 # Find
-find_keyword  = { fg = "#000000", bg = "#dfa0f0", bold = true }
+find_keyword  = { fg = "#404040", bg = "#dfa0f0", bold = true }
 find_position = { fg = "#3548cf", bg = "#efe9dd", bold = true }
 
 # Marker
 marker_copied   = { fg = "#316500", bg = "#316500" }
 marker_cut      = { fg = "#a60000", bg = "#a60000" }
-marker_marked   = { fg = "#721045", bg = "#721045" }
+marker_marked   = { fg = "#8f0075", bg = "#8f0075" }
 marker_selected = { fg = "#0031a9", bg = "#0031a9" }
 
 # Tab
@@ -59,8 +59,8 @@ permissions_s = { fg = "#595959" }
 
 [select]
 border   = { fg = "#5c3f3d" }
-active   = { fg = "#000000",  bg = "#9f9690" }
-inactive = { fg = "#000000" }
+active   = { fg = "#404040",  bg = "#9f9690" }
+inactive = { fg = "#404040" }
 
 # Input
 [input]
@@ -72,14 +72,14 @@ selected = { bg = "#9f9690" }
 # Completion
 [completion]
 border   = { fg = "#0000b0" }
-active   = { fg = "#000000", bg = "#9f9690" }
-inactive = { fg = "#000000" }
+active   = { fg = "#404040", bg = "#9f9690" }
+inactive = { fg = "#404040" }
 
 # Tasks
 [tasks]
 border  = { fg = "#5c3f3d" }
 title   = {}
-hovered = { fg = "#000000", bg="#9f9690" }
+hovered = { fg = "#404040", bg="#9f9690" }
 
 # Which
 [which]
@@ -87,7 +87,7 @@ cols = 3
 mask            = { bg = "#f0f0f0" }
 cand            = { fg = "#005e8b" }
 rest            = { fg = "#0031a9" }
-desc            = { fg = "#721045" }
+desc            = { fg = "#8f0075" }
 separator       = "  "
 separator_style = { fg = "#595959" }
 
@@ -100,9 +100,9 @@ title_error = { fg = "#a60000" }
 # Help
 [help]
 on      = { fg = "#006800" }
-run     = { fg = "#721045" }
+run     = { fg = "#8f0075" }
 hovered = { bg = "#9f9690" }
-footer  = { fg = "#000000", bg = "#f0f0f0" }
+footer  = { fg = "#404040", bg = "#f0f0f0" }
 
 [filetype]
 
@@ -114,8 +114,8 @@ rules = [
 	{ mime = "{audio,video}/*", fg = "#884900" },
 
 	# Archives
-	{ mime = "application/*zip", fg = "#721045" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#721045" },
+	{ mime = "application/*zip", fg = "#8f0075" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#8f0075" },
 
 	# Documents
 	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#005e8b" },

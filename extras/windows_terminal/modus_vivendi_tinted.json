@@ -8,7 +8,7 @@
     "background": "#0d0e1c",
     "foreground": "#ffffff",
     "cursorColor": "#ffffff",
-    "selectionBackground": "#7030af",
+    "selectionBackground": "${visual}",
     "black": "#0d0e1c",
     "red": "#ff5f59",
     "green": "#44bc44",
