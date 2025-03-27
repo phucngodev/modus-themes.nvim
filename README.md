@@ -12,7 +12,7 @@ is a Neovim port of the original
 [Modus Themes](https://protesilaos.com/emacs/modus-themes) built for
 [GNU Emacs](https://www.gnu.org/software/emacs/).
 
-![Modus Themes Preview](https://raw.githubusercontent.com/miikanissi/modus-themes.nvim/master/assets/modus-themes-preview.png)
+![Modus theme preview](preview.png)
 
 ## Overview
 

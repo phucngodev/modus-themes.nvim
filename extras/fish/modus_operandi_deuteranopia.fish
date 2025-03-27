@@ -1,8 +1,8 @@
 # Modus Themes for Fish
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/fish.lua
 
-set -l foreground 000000
-set -l selection dfa0f0
+set -l foreground 404040
+set -l selection e7e5e4
 set -l comment 77492f
 set -l red a60000
 set -l orange 973300
@@ -10,7 +10,7 @@ set -l yellow 695500
 set -l green 006800
 set -l purple 531ab6
 set -l cyan 005e8b
-set -l pink 721045
+set -l pink 8f0075
 
 # Syntax Highlighting Colors
 set -g fish_color_normal $foreground
