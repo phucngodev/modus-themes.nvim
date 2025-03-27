@@ -32,41 +32,41 @@ function M.setup()
 
 	theme.highlights = {
 		-- UI
-		Normal = { fg = c.fg_main, bg = bg_main }, -- Normal text.
+		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text.
 		NormalNC = {
 			fg = fg_inactive,
 			bg = bg_inactive,
 		}, -- Normal text in non-current windows.
-		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar.
-		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window.
-		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
-		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
-		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
-		LineNr = { fg = c.fg_main, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
-		LineNrAbove = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number above the cursor line.
-		LineNrBelow = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number below the cursor line.
-		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
-		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
-		SignColumnSB = { fg = c.fg_dim, bg = options.sign_column_background and bg_sidebar or bg_main }, -- Column where |signs| are displayed in the sidebar.
-		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		CursorColumn = { fg = c.none, bg = c.bg_hl_line }, -- Screen-column at the cursor, when `cursorcolumn` is set.
-		NonText = { fg = c.fg_dim }, -- `@` at the end of the window, characters from `showbreak` and other characters that do not really exist in the text (e.g., `>` displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- Normal text in sidebar.
+		NormalFloat = { fg = c.comment, bg = c.bg_popup }, -- Float Window.
+		FloatBorder = { fg = c.border, bg = c.none }, -- Float Border.
+		FloatTitle = { fg = c.none, bg = c.bg_popup }, -- Float Title.
+		Folded = { fg = c.green_faint, bg = c.bg_main }, -- Line for closed folds.
+		LineNr = { fg = c.comment, bg = c.bg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNrAbove = { fg = c.comment, bg = c.bg_main }, -- Line number above the cursor line.
+		LineNrBelow = { fg = c.comment, bg = c.bg_main }, -- Line number below the cursor line.
+		CursorLineNr = { fg = c.fg_cursor, bg = c.bg_cursor }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
+		SignColumn = { fg = c.none, bg = c.bg_main }, -- Column where |signs| are displayed.
+		SignColumnSB = { fg = c.none, bg = c.bg_main }, -- Column where |signs| are displayed in the sidebar.
+		CursorLine = { fg = c.none, bg = c.bg_cursor }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorColumn = { fg = c.none, bg = c.bg_dim }, -- Screen-column at the cursor, when `cursorcolumn` is set.
+		NonText = { fg = c.nontext }, -- `@` at the end of the window, characters from `showbreak` and other characters that do not really exist in the text (e.g., `>` displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line.
 		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see `conceallevel`).
-		Cursor = { fg = c.bg_main, bg = c.cursor }, -- Character under the cursor.
+		Cursor = { fg = c.none, bg = c.bg_cursor }, -- Character under the cursor.
 		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see `guicursor`).
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|.
 		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with `colorcolumn`.
-		FoldColumn = { fg = c.fg_inactive, bg = options.transparent and c.none or c.bg_inactive }, -- See `foldcolumn`.
+		FoldColumn = { fg = c.none, bg = c.bg_main }, -- See `foldcolumn`.
 		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see `hlsearch`).  Also used for similar items that need to stand out.
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- `incsearch` highlighting; also used for the text replaced with `:s///c`.
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting.
-		QuickFixLine = { fg = c.fg_main, bg = c.visual }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item.
-		PmenuSel = { fg = c.bg_active, bg = c.fg_active }, -- Popup menu: selected item.
-		PmenuSbar = { fg = c.fg_active, bg = c.bg_dim }, -- Popup menu: scrollbar.
-		PmenuThumb = { link = "Cursor" }, -- Popup menu: Thumb of the scrollbar.
+		QuickFixLine = { fg = c.fg_main, bg = c.bg_green_intense }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Pmenu = { fg = c.comment, bg = c.bg_popup, bold = true }, -- Popup menu: normal item.
+		PmenuSel = {bg = c.bg_nvimtree_cursor}, -- Popup menu: selected item.
+		PmenuSbar = { fg = c.none, bg = c.fg_cursor }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = c.fg_cursor }, -- Popup menu: Thumb of the scrollbar.
 		Menu = { link = "Pmenu" }, -- Menu.
 		Scrollbar = { link = "PmenuSbar" }, -- Scrollbar.
 		Directory = { fg = c.blue }, -- Directory names (and other special names in listings).
@@ -75,24 +75,24 @@ function M.setup()
 		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WildMenu = { fg = c.fg_main, bg = c.visual }, -- current match in `wildmenu` completion.
 		Whitespace = { link = "NonText" }, -- `nbsp`, `space`, `tab` and `trail` in `listchars`.
-		StatusLine = { fg = c.fg_status_line_active, bg = c.bg_status_line_active }, -- Status line of current window.
-		StatusLineNC = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use `^^^` in the status line of the current window.
+		StatusLine = { fg = c.fg_tab_other, bg = c.bg_statusline }, -- Status line of current window.
+		StatusLineNC = { fg = c.fg_tab_other, bg = c.bg_statusline }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use `^^^` in the status line of the current window.
 		TabLine = { fg = c.fg_tab_other, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label.
 		TabLineSel = { fg = c.fg_main, bg = c.bg_tab_current, bold = true }, -- Tab pages line, active tab page label.
-		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels.
-		WinBar = { link = "TabLineSel" }, -- Window bar.
+		TabLineFill = { fg = c.fg_main, bg = c.bg_tab_other }, -- Tab pages line, where there are no labels.
+		WinBar = { fg = c.border, bg = c.bg_main }, -- Window bar.
 		WinBarNC = { link = "TabLine" }, -- Window bar in inactive windows.
-		EndOfBuffer = { fg = c.fg_inactive }, -- Filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		EndOfBuffer = { fg = c.fg_inactive }, -- Filler lines (~) after the end of the buffer.	By default, this is highlighted like |hl-NonText|.
 		MatchParen = { fg = c.fg_main, bg = c.bg_paren_match }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.fg_dim, bold = true }, -- `showmode` message (e.g., `-- INSERT -- `).
 		MsgArea = { fg = c.fg_main }, -- Area for messages and cmdline.
-		MoreMsg = { fg = c.blue }, -- The |more-prompt|.
-		VertSplit = { fg = c.border }, -- The column separating vertically split windows.
-		WinSeparator = { fg = c.border, bold = true }, -- The column separating vertically split windows.
+		MoreMsg = { fg = c.main }, -- The |more-prompt|.
+		VertSplit = { fg = c.border, bg = c.none }, -- The column separating vertically split windows.
+		WinSeparator = { fg = c.border, bg = c.bg_main }, -- The column separating vertically split windows.
 		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|.
 		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|.
-		DiffChange = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed line |diff.txt|.
-		DiffText = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed text within a changed line |diff.txt|.
+		DiffChange = { fg = c.fg_changed, bg = c.bg_main }, -- Diff mode: Changed line |diff.txt|.
+		DiffText = { fg = c.fg_changed, bg = c.bg_yellow_nuanced }, -- Diff mode: Changed text within a changed line |diff.txt|.
 		SpecialKey = { fg = c.fg_dim }, -- Unprintable characters: text displayed differently from what it really is.  But not `listchars` whitespace. |hl-Whitespace|.
 		SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -101,16 +101,26 @@ function M.setup()
 		WarningMsg = { fg = c.warning }, -- Warning messages.
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions.
 
+		-- Avante
+		AvanteConflictCurrent = { link = "DiffChange" },
+		AvanteConflictIncoming = { link = "DiffAdd" },
+		AvanteToBeDeletedWOStrikethrough = { link = "DiffDelete" },
+		AvanteSidebarWinSeparator= { link = "VertSplit" },
+
+		-- Lazy git
+		LazyGitFloat = { link = "Pmenu" },
+		LazyGitBorder = { fg = c.border, bg = c.none },
+
 		-- Syntax
 		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment.
-		String = { fg = c.blue_warmer }, -- String constant (e.g. `"this is a string"`).
+		String = { fg = c.fg_dim }, -- String constant (e.g. `"this is a string"`).
 		Character = { fg = c.blue_warmer }, -- Character constant (e.g. `c`, `\n`).
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
 		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement.
 		Conditional = { fg = c.magenta_cooler }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
 		Repeat = { fg = c.magenta_cooler }, -- `for`, `do`, `while`, etc.
 		Label = { fg = c.cyan }, -- `case`, `default`, etc.
-		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword.
+		Keyword = { fg = c.magenta, style = options.styles.keywords }, -- Any other keyword.
 		Exception = { fg = c.magenta_cooler }, -- `try`, `catch`, `throw`, etc.
 		StorageClass = { fg = c.magenta_cooler }, -- `static`, `register`, `volatile`, etc.
 		Structure = { fg = c.magenta_cooler }, -- `struct`, `union`, `enum`, etc.
@@ -118,18 +128,18 @@ function M.setup()
 		Function = { fg = c.magenta, style = options.styles.functions }, -- Function names.
 		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name.
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
-		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
+		Include = { fg = c.rust }, -- preprocessor `#include`.
 		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
 		Macro = { fg = c.red_cooler }, -- Same as Define.
 		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
-		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
-		TypeDef = { fg = c.cyan_warmer }, -- A typedef.
+		Type = { fg = c.blue_cooler }, -- (preferred) `int`, `long`, `char`, etc.
+		TypeDef = { fg = c.magenta_warmer }, -- A typedef.
 		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
-		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
+		Operator = { fg = c.fg_dim }, -- `sizeof`, `+`, `*`, etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
-		Delimiter = { fg = c.fg_main }, -- Character that needs attention (e.g. `.`).
+		Delimiter = { fg = c.fg_dim }, -- Character that needs attention (e.g. `.`).
 		Special = { link = "Type" },
 		SpecialChar = { fg = c.cyan_faint },
 		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out (e.g. URIs).
@@ -161,23 +171,35 @@ function M.setup()
 		markdownH5 = { fg = c.red, bold = true },
 		markdownH6 = { fg = c.cyan_warmer, bold = true },
 
+		RenderMarkdownCode = { fg = c.comment, bg = c.bg_main },
+		RenderMarkdownDash = { fg = c.border, bg = c.bg_main },
+		RenderMarkdownSign = { fg = c.fg_dim, bg = c.bg_main },
+
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspCodeLens = { fg = c.comment },
-		LspInlayHint = { bg = bg_main, fg = c.comment, italic = true },
-		LspReferenceText = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "text" references.
-		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references.
-		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references.
-		LspSignatureActiveParameter = { link = "Visual" },
-		LspInfoBorder = { fg = c.border_highlight, bg = bg_main },
+		LspCodeLens = { bg = c.bg_popup, fg = c.comment },
+		LspInlayHint = { bg = c.bg_popup, fg = c.comment, italic = true },
+		LspReferenceText = { bg = c.bg_popup, fg = c.comment }, -- used for highlighting "text" references.
+		LspReferenceRead = { bg = c.bg_popup, fg = c.comment }, -- used for highlighting "read" references.
+		LspReferenceWrite = { bg = c.bg_popup, fg = c.comment }, -- used for highlighting "write" references.
+		LspSignatureActiveParameter = { fg = c.comment, bg = c.bg_popup },
+		LspInfo = { fg = c.comment, bg = c.bg_popup },
+		LspInfoBorder = { fg = c.border, bg = c.bg_popup },
+
+		BlinkCmpMenu = { fg = c.comment, bg = c.bg_popup },
+		BlinkCmpMenuBorder = { fg = c.border, bg = c.bg_popup },
+		BlinkCmpDocBorder = { fg = c.border, bg = c.bg_popup },
+		BlinkCmpDocSeparator = { fg = c.border, bg = c.bg_popup },
+		BlinkCmpSignatureHelp = { fg = c.none, bg = c.bg_popup },
+		BlinkCmpSignatureHelpBorder = { fg = c.border, bg = c.bg_popup },
 
 		-- These are used by the native diagnostics.
-		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticError = { fg = c.error, bg = c.bg_main, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticWarn = { fg = c.warning, bg = c.bg_main, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticInfo = { fg = c.info, bg = c.bg_main, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticHint = { fg = c.hint, bg = c.bg_main, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticUnnecessary = { fg = c.fg_main, bg = c.bg_main, }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 
 		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text.
 		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text.
@@ -189,8 +211,8 @@ function M.setup()
 		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics.
 		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics.
 
-		ALEErrorSign = { fg = c.error, bold = true },
-		ALEWarningSign = { fg = c.warning, bold = true },
+		ALEErrorSign = { fg = c.error, bg = c.bg_main, bold = true },
+		ALEWarningSign = { fg = c.warning, bg = c.bg_main, bold = true },
 
 		-- Neovim tree-sitter highlights
 		-- Identifiers
@@ -441,23 +463,23 @@ function M.setup()
 		NeotestTarget = { fg = c.blue },
 
 		-- GitGutter
-		GitGutterAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = c.fg_changed_intense, bg = options.sign_column_background and c.bg_changed or bg_main }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { fg = c.fg_removed_intense, bg = options.sign_column_background and c.bg_removed or bg_main }, -- diff mode: Deleted line |diff.txt|
-		GitGutterAddLineNr = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main },
+		GitGutterAdd = { fg = c.fg_added, bg = c.bg_added }, -- diff mode: Added line |diff.txt|
+		GitGutterChange = { fg = c.fg_changed, bg = c.bg_main }, -- diff mode: Changed line |diff.txt|
+		GitGutterDelete = { fg = c.fg_removed, bg = c.bg_main }, -- diff mode: Deleted line |diff.txt|
+		GitGutterAddLineNr = { fg = c.fg_added, bg = c.bg_main },
 		GitGutterChangeLineNr = {
 			fg = c.fg_changed_intense,
-			bg = options.sign_column_background and c.bg_changed or bg_main,
+			bg = c.bg_changed ,
 		},
 		GitGutterDeleteLineNr = {
 			fg = c.fg_removed_intense,
-			bg = options.sign_column_background and c.bg_removed or bg_main,
+			bg = c.bg_removed,
 		},
 
 		-- GitSigns
-		GitSignsAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = c.fg_changed_intense, bg = options.sign_column_background and c.bg_changed or bg_main }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = c.fg_removed_intense, bg = options.sign_column_background and c.bg_removed or bg_main }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = c.fg_added_intense, bg =  c.bg_main }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = c.fg_changed_intense, bg = c.bg_main }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = c.fg_removed_intense, bg = c.bg_main }, -- diff mode: Deleted line |diff.txt|
 
 		-- mini.diff
 		MiniDiffSignAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
@@ -484,6 +506,7 @@ function M.setup()
 		FzfLuaBorder = { fg = c.border, bg = bg_main },
 		FzfLuaTitle = { fg = c.fg_dim, bg = bg_main },
 
+
 		FzfLuaHeaderBind = { fg = c.gold },
 		FzfLuaHeaderText = { fg = c.yellow_cooler },
 		FzfLuaPathColNr = { fg = c.cyan_cooler },
@@ -497,19 +520,8 @@ function M.setup()
 		FzfLuaLiveSym = { fg = c.gold },
 
 		-- NvimTree
-		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
-		NvimTreeWinSeparator = { fg = c.border, bg = c.border },
-		NvimTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
-		NvimTreeRootFolder = { fg = c.blue, bold = true },
-		NvimTreeGitDirty = { fg = c.fg_changed_intense },
-		NvimTreeGitNew = { fg = c.fg_added_intense },
-		NvimTreeGitDeleted = { fg = c.fg_removed_intense },
-		NvimTreeOpenedFile = { bg = c.bg_hl_line },
-		NvimTreeSpecialFile = { fg = c.magenta_cooler, underline = true },
-		NvimTreeIndentMarker = { fg = c.fg_dim },
-		NvimTreeImageFile = { fg = c.fg_active },
-		NvimTreeSymlink = { fg = c.blue },
-		NvimTreeFolderIcon = { bg = c.none, fg = c.blue },
+		NvimTreeNormal = { fg = c.none, bg = c.bg_nvimtree },
+		NvimTreeCursorLine = { fg = c.none, bg = c.bg_nvimtree_cursor },
 
 		-- Neotree
 		NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
