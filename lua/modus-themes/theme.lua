@@ -173,11 +173,11 @@ function M.setup()
 		LspInfoBorder = { fg = c.border_highlight, bg = bg_main },
 
 		-- These are used by the native diagnostics.
-		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
-		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticError = { fg = c.error, bg = c.bg_dim, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticWarn = { fg = c.warning, bg = c.bg_dim, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticInfo = { fg = c.info, bg = c.bg_dim, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticHint = { fg = c.hint, bg = c.bg_dim, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticUnnecessary = { fg = c.fg_dim, bg = c.bg_dim, }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 
 		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text.
 		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text.
@@ -189,8 +189,8 @@ function M.setup()
 		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics.
 		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics.
 
-		ALEErrorSign = { fg = c.error, bold = true },
-		ALEWarningSign = { fg = c.warning, bold = true },
+		ALEErrorSign = { fg = c.error, bg = c.bg_dim, bold = true },
+		ALEWarningSign = { fg = c.warning, bg = c.bg_dim, bold = true },
 
 		-- Neovim tree-sitter highlights
 		-- Identifiers
