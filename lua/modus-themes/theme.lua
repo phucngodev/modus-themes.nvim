@@ -163,7 +163,7 @@ function M.setup()
 
 		RenderMarkdownCode = { fg = c.comment, bg = c.none },
 		RenderMarkdownDash = { fg = c.border, bg = c.none },
-		RenderMarkdownSign = { fg = c.fg_dim, bg = c.bg_sidebar },
+		RenderMarkdownSign = { fg = c.fg_dim, bg = c.bg_main },
 
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
