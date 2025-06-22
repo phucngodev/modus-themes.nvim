@@ -161,8 +161,8 @@ function M.setup()
 		markdownH5 = { fg = c.red, bold = true },
 		markdownH6 = { fg = c.cyan_warmer, bold = true },
 
-		RenderMarkdownCode = { fg = c.comment, bg = c.none },
-		RenderMarkdownDash = { fg = c.border, bg = c.none },
+		RenderMarkdownCode = { fg = c.comment, bg = c.bg_main },
+		RenderMarkdownDash = { fg = c.border, bg = c.bg_main },
 		RenderMarkdownSign = { fg = c.fg_dim, bg = c.bg_main },
 
 		-- These groups are for the native LSP client. Some other LSP clients may
