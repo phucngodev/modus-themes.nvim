@@ -521,7 +521,7 @@ function M.setup()
 
     -- NvimTree
     NvimTreeNormal = { fg = c.none, bg = c.bg_nvimtree },
-    NvimTreeCursorLine = { fg = c.blue, bg = c.bg_cursor },
+    NvimTreeCursorLine = { fg = c.none, bg = c.bg_cursor },
 
     -- Neotree
     NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
