@@ -171,7 +171,7 @@ function M.setup()
     markdownH5 = { fg = c.red, bold = true },
     markdownH6 = { fg = c.cyan_warmer, bold = true },
 
-    RenderMarkdownCode = { bg = c.bg_cursor },
+    RenderMarkdownCode = { bg = c.bg_main },
     RenderMarkdownDash = { fg = c.border, bg = c.bg_main },
     RenderMarkdownSign = { fg = c.fg_dim, bg = c.bg_main },
 
