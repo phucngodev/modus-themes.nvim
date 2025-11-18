@@ -503,7 +503,7 @@ function M.setup()
 
     -- Fzf Lua
     FzfLuaNormal = { link = "Normal" },
-    FzfLuaBorder = { fg = c.comment, bg = bg_main },
+    FzfLuaBorder = { fg = c.border, bg = bg_main },
     FzfLuaTitle = { fg = c.fg_dim, bg = bg_main },
 
 
