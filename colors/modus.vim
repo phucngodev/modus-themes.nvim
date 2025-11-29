@@ -62,7 +62,7 @@ function! s:modus_operandi()
   let c.bg_menu = "#f5f5f4"
   let c.nontext = "#e5e5e5"
   let c.comment = "#727169"
-  
+
   " Common foreground values
   let c.red = "#a60000"
   let c.red_warmer = "#972500"
@@ -432,7 +432,7 @@ function! s:apply_highlights(c, bg_main, bg_inactive, fg_inactive)
   call s:hi("NERDTreeOpenable", a:c.magenta, "", "", "")
   call s:hi("NERDTreeClosable", a:c.magenta, "", "", "")
   call s:hi("NERDTreeFile", a:c.fg_main, "", "", "")
-  call s:hi("NERDTreeExecFile", a:c.yellow, "", "", "")
+  call s:hi("NERDTreeExecFile", a:c.main, "", "", "")
   call s:hi("NERDTreeUp", a:c.comment, "", "", "")
   call s:hi("NERDTreeCWD", a:c.accent, "", "bold", "")
   call s:hi("NERDTreeHelp", a:c.fg_main, "", "", "")
