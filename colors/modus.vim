@@ -57,7 +57,7 @@ function! s:modus_operandi()
   let c.bg_cursor = "#f5f5f5"
   let c.fg_cursor = "#60a5fa"
   let c.bg_scollbar = "#6996E0"
-  let c.bg_popup = "#fafafa"
+  let c.bg_popup = "#f1f5f9"
   let c.bg_nvimtree = "#fafafa"
   let c.bg_menu = "#f5f5f4"
   let c.nontext = "#e5e5e5"
@@ -221,9 +221,9 @@ function! s:apply_highlights(c, bg_main, bg_inactive, fg_inactive)
   call s:hi("Normal", a:c.fg_main, a:bg_main, "", "")
   call s:hi("NormalNC", a:fg_inactive, a:bg_inactive, "", "")
   call s:hi("NormalSB", a:c.fg_sidebar, a:c.bg_sidebar, "", "")
-  call s:hi("NormalFloat", a:c.fg_main, a:c.bg_main, "", "")
+  call s:hi("NormalFloat", a:c.fg_main, a:c.bg_popup, "", "")
   call s:hi("FloatBorder", a:c.comment, a:c.none, "", "")
-  call s:hi("FloatTitle", a:c.fg_main, a:c.bg_main, "", "")
+  call s:hi("FloatTitle", a:c.fg_main, a:c.bg_popup, "", "")
   call s:hi("Folded", a:c.green_faint, a:c.bg_main, "", "")
   call s:hi("LineNr", a:c.bg_scollbar, g:modus_themes_line_nr_column_background ? a:c.bg_main : a:c.none, "", "")
   call s:hi("LineNrAbove", a:c.comment, g:modus_themes_line_nr_column_background ? a:c.bg_main : a:c.none, "", "")
@@ -246,7 +246,7 @@ function! s:apply_highlights(c, bg_main, bg_inactive, fg_inactive)
   call s:hi("CurSearch", "", "", "", "IncSearch")
   call s:hi("Substitute", a:c.fg_main, a:c.bg_red_intense, "", "")
   call s:hi("QuickFixLine", a:c.fg_main, a:c.bg_green_intense, "", "")
-  call s:hi("Pmenu", a:c.main, a:c.bg_main, "", "")
+  call s:hi("Pmenu", a:c.main, a:c.bg_popup, "", "")
   call s:hi("PmenuSel", a:c.comment, a:c.bg_scollbar, "", "")
   call s:hi("PmenuSbar", a:c.none, a:c.bg_cursor, "", "")
   call s:hi("PmenuThumb", "", a:c.fg_cursor, "", "")
