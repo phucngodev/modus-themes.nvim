@@ -5,10 +5,10 @@
 [![License](https://img.shields.io/github/license/miikanissi/modus-themes.nvim)](https://github.com/miikanissi/modus-themes.nvim/blob/master/LICENSE)
 [![WCAG AAA](https://img.shields.io/badge/WCAG%20AAA-2.1-blue)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)
 
-Highly accessible themes for [Neovim](https://github.com/neovim/neovim), conforming with
+Highly accessible themes for [Vim](https://github.com/vim/vim) 8 and above, conforming with
 the highest standard for color contrast between background and foreground values
 ([WCAG AAA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)). This
-is a Neovim port of the original
+is a Vim-compatible port of the original
 [Modus Themes](https://protesilaos.com/emacs/modus-themes) built for
 [GNU Emacs](https://www.gnu.org/software/emacs/).
 
@@ -25,7 +25,7 @@ text have a contrast ratio of at least 4.5:1. Incidental text that is part of an
 inactive user interface component, or that are for pure decoration, have no contrast
 requirement.
 
-This is a Neovim port of the
+This is a Vim-compatible port of the
 [original Modus Themes](https://protesilaos.com/emacs/modus-themes) for GNU Emacs, and
 follows the design philosophy. It is not intended to be an exact 1:1 correspondence with
 GNU Emacs, but rather follows the spirit of the design and ensures conformity to the
@@ -36,34 +36,19 @@ Any issues and contributions should be directed there.
 
 ## Features
 
-- Highly accessible — prioritizes color contrast and contains tinted, deuteranopia, and
-  tritanopia theme variants
-- Extensive `TreeSitter` syntax highlighting and `LSP` integration
-- Supports most popular Neovim plugins
-- Switch between light (`modus_operandi`) and dark (`modus_vivendi`) mode automatically
-  based on the background value set with `vim.o.background`
-- Provides [extras](#extras) to use Modus Themes with numerous other applications
+- Highly accessible — prioritizes color contrast
+- Extensive syntax highlighting for multiple programming languages
+- Supports most popular Vim plugins
+- Light theme only (`modus_operandi`)
 
 ## Requirements
 
-- [Neovim](https://github.com/neovim/neovim) >=
-  [0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0)
+- [Vim](https://github.com/vim/vim) >=
+  [8.0](https://github.com/vim/vim/releases/tag/v8.0.0000) with `+termguicolors` support
 
 ## Installation
 
-Install the theme with your preferred package manager.
-
-[lazy.nvim](https://github.com/folke/lazy.nvim)
-
-```lua
-{ "miikanissi/modus-themes.nvim", priority = 1000 }
-```
-
-[packer.nvim](https://github.com/wbthomason/packer.nvim)
-
-```lua
-use({ "miikanissi/modus-themes.nvim" })
-```
+Install the theme with your preferred plugin manager.
 
 [vim-plug](https://github.com/junegunn/vim-plug)
 
@@ -71,19 +56,25 @@ use({ "miikanissi/modus-themes.nvim" })
 Plug 'miikanissi/modus-themes.nvim'
 ```
 
-## Usage
-
-### Lua
-
-```lua
-vim.cmd([[colorscheme modus]]) -- modus_operandi, modus_vivendi
-```
-
-### Vim Script
+[Vundle](https://github.com/VundleVim/Vundle.vim)
 
 ```vim
-colorscheme modus " modus_operandi, modus_vivendi
+Plugin 'miikanissi/modus-themes.nvim'
 ```
+
+[Pathogen](https://github.com/tpope/vim-pathogen)
+
+```bash
+git clone https://github.com/miikanissi/modus-themes.nvim.git ~/.vim/bundle/modus-themes.nvim
+```
+
+## Usage
+
+```vim
+colorscheme modus " light theme only (`modus_operandi`)
+```
+
+Only the light theme is available.
 
 ## Configuration
 
@@ -91,98 +82,36 @@ colorscheme modus " modus_operandi, modus_vivendi
 > `colorscheme modus`.
 
 By default, the theme will choose between light (`modus_operandi`) and dark
-(`modus_vivendi`) based on the background value set with `vim.o.background`.
+(`modus_vivendi`) based on your `background` setting.
 
-If using the default options, there is no need to explicitly call `setup`.
+The following global variables can be set to customize the theme:
 
-```lua
--- Default options
-require("modus-themes").setup({
-	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
-	-- `auto` will automatically set style based on background set with vim.o.background
-	style = "auto",
-	variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-	transparent = false, -- Transparent background (as supported by the terminal)
-	dim_inactive = false, -- "non-current" windows are dimmed
-	hide_inactive_statusline = false, -- Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
-	line_nr_column_background = true, -- Distinct background colors in line number column. `false` will disable background color and fallback to Normal background
-	sign_column_background = true, -- Distinct background colors in sign column. `false` will disable background color and fallback to Normal background
-	styles = {
-		-- Style to be applied to different syntax groups
-		-- Value is any valid attr-list value for `:help nvim_set_hl`
-		comments = { italic = true },
-		keywords = { italic = true },
-		functions = {},
-		variables = {},
-	},
+```vim
+" Configuration options for the light theme
 
-	--- You can override specific color groups to use other groups or a hex color
-	--- Function will be called with a ColorScheme table
-	--- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the ColorScheme table
-	---@param colors ColorScheme
-	on_colors = function(colors) end,
+" Transparent background (as supported by the terminal)
+let g:modus_themes_transparent = 0
 
-	--- You can override specific highlights to use other groups or a hex color
-	--- Function will be called with a Highlights and ColorScheme table
-	--- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the Highlights and ColorScheme table
-	---@param highlights Highlights
-	---@param colors ColorScheme
-	on_highlights = function(highlights, colors) end,
-})
+" "non-current" windows are dimmed
+let g:modus_themes_dim_inactive = 0
+
+" Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
+let g:modus_themes_hide_inactive_statusline = 0
+
+" Distinct background colors in line number column. 0 will disable background color and fallback to Normal background
+let g:modus_themes_line_nr_column_background = 1
+
+" Distinct background colors in sign column. 0 will disable background color and fallback to Normal background
+let g:modus_themes_sign_column_background = 1
 ```
 
-### Example Settings with Color and Highlight Overrides
+### Example Settings
 
-```lua
-require("modus-themes").setup({
-	style = "modus_operandi", -- Always use modus_operandi regardless of `vim.o.background`
-	variant = "deuteranopia", -- Use deuteranopia variant
-	styles = {
-		functions = { italic = true }, -- Enable italics for functions
-	},
-
-	on_colors = function(colors)
-		colors.error = colors.red_faint -- Change error color to the "faint" variant
-	end,
-	on_highlights = function(highlight, color)
-		highlight.Boolean = { fg = color.green } -- Change Boolean highlight to use the green color
-	end,
-})
+```vim
+" Enable transparent background
+let g:modus_themes_transparent = 1
+" colorscheme modus
 ```
-
-## Extras
-
-<!-- prettier-ignore-start -->
-<!-- extras:start -->
-
-- [Aerc](https://git.sr.ht/~rjarry/aerc) ([aerc](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/aerc))
-- [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty))
-- [Bat](https://github.com/sharkdp/bat) ([bat](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat))
-- [Delta](https://github.com/dandavison/delta) ([delta](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta))
-- [Dunst](https://dunst-project.org/) ([dunst](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst))
-- [Fish](https://fishshell.com/docs/current/index.html) ([fish](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish))
-- [Foot](https://codeberg.org/dnkl/foot) ([foot](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/foot))
-- [Ghostty](https://ghostty.org/docs/features/theme) ([ghostty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/ghostty))
-- [GitUI](https://github.com/extrawurst/gitui) ([gitui](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/gitui))
-- [iTerm](https://iterm2.com/) ([iterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/iterm))
-- [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/kitty))
-- [Lua Table for testing and reference](https://www.lua.org) ([lua](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua))
-- [Oomox/Themix](https://github.com/themix-project/themix-gui) ([oomox](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/oomox))
-- [PrismJS](https://prismjs.com) ([prismjs](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs))
-- [qt5ct](https://sourceforge.net/projects/qt5ct/) ([qt5ct](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/qt5ct))
-- [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator))
-- [Tilix](https://github.com/gnunn1/tilix) ([tilix](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix))
-- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tmux))
-- [WezTerm](https://wezfurlong.org/wezterm/config/files.html) ([wezterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/wezterm))
-- [Windows Terminal](https://aka.ms/terminal-documentation) ([windows_terminal](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/windows_terminal))
-- [Xfce Terminal](https://docs.xfce.org/apps/terminal/advanced) ([xfceterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xfceterm))
-- [Xresources](https://wiki.archlinux.org/title/X_resources) ([xresources](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xresources))
-- [Yazi](https://github.com/sxyazi/yazi) ([yazi](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/yazi))
-- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zathura))
-- [Zellij](https://github.com/zellij-org/zellij) ([zellij](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zellij))
-
-<!-- extras:end -->
-<!-- prettier-ignore-end -->
 
 ## Contributing
 
