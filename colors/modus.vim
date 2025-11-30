@@ -178,7 +178,7 @@ function! s:modus_operandi()
   let c.accent_darker = c.blue
   let c.accent_dark = c.blue_intense
   let c.cursor = c.fg_main
-  let c.comment = c.comment
+  let c.comment = "#727169"
   let c.error = c.red_cooler
   let c.warning = c.yellow_cooler
   let c.info = c.blue_cooler
@@ -393,7 +393,7 @@ function! s:apply_highlights(c, bg_main, bg_inactive, fg_inactive)
   let a:c.accent_darker = a:c.blue
   let a:c.accent_dark = a:c.blue_intense
   let a:c.cursor = a:c.fg_main
-  let a:c.comment = a:c.comment
+  let a:c.comment = "#727169"
   let a:c.error = a:c.red_cooler
   let a:c.warning = a:c.yellow_cooler
   let a:c.info = a:c.blue_cooler
