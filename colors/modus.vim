@@ -431,6 +431,7 @@ call s:hi("NERDTreeCWD", s:colors.accent, s:colors.none, "bold")
 call s:hi("NERDTreeHelp", s:colors.fg_main, s:colors.none, "")
 call s:hi("NERDTreeToggleOn", s:colors.green, s:colors.none, "")
 call s:hi("NERDTreeToggleOff", s:colors.red, s:colors.none, "")
+highlight CursorLine cterm=NONE ctermbg=NONE
 
 " VimWiki
 call s:hi("VimwikiHeader1", s:colors.blue, s:colors.none, "bold")
