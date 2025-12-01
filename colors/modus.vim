@@ -1,5 +1,5 @@
 " Vim color file
-" Maintainer:   Miika Nissi
+" Maintainer:   Phuc
 " Version:      2.0.0 (Light theme only)
 " Based on:     Modus Themes for Emacs by Protesilaos Stavrou
 " For the original theme visit: https://protesilaos.com/emacs/modus-themes
