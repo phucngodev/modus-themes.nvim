@@ -332,6 +332,7 @@ call s:hi("htmlH3", s:colors.magenta, s:colors.none, "bold")
 call s:hi("htmlH4", s:colors.green, s:colors.none, "bold")
 call s:hi("htmlH5", s:colors.red, s:colors.none, "bold")
 call s:hi("htmlH6", s:colors.cyan_warmer, s:colors.none, "bold")
+call s:hi("htmlError", s:colors.main, s:colors.none, "")
 
 " Markdown
 call s:hi("mkdCodeDelimiter", s:colors.fg_main, s:colors.bg_alt, "")
